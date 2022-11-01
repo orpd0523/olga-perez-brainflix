@@ -1,13 +1,12 @@
-import './App.css';
+import './App.scss';
+import Navigation from './components/NavigationSection/Navigation';  
 
 function App() {
   return (
     <div className="App">
-      Hello World
+    <Navigation/>
     </div>
   );
 }
 
 export default App;
-
-
