@@ -1,6 +1,6 @@
-import "./VideoDescription.scss"
+import "./VideoDetails.scss"
 
-function VideoDescription(props){
+function VideoDetails(props){
     return(
     <section>
         <h1>{props.title}</h1>
@@ -13,4 +13,4 @@ function VideoDescription(props){
     );
 }
 
-export default VideoDescription;
+export default VideoDetails;
