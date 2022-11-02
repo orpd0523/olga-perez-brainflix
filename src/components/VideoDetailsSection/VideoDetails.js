@@ -5,7 +5,7 @@ function VideoDetails(props){
     <section>
         <h1>{props.title}</h1>
         <h2>{props.channel}</h2>
-        <date>{props.timestamp}</date>
+        <time>{props.timestamp}</time>
         <p>{props.views}</p>
         <p>{props.likes}</p>
         <p>{props.description}</p>

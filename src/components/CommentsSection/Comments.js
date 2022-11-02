@@ -23,7 +23,7 @@ function CommentsTitle() {
 function AddComment() {
     return(
         <div>
-            <label for="newComment">JOIN THE CONVERSATION
+            <label htmlFor="newComment">JOIN THE CONVERSATION
             <textarea name="newComment" placeholder="Add a new comment"/>
             </label>
         </div>
@@ -47,7 +47,7 @@ function PostedComment(props){
         <div>
             <h3>{props.name}</h3>
             <p>{props.commentText}</p>
-            <date>{props.timestamp}</date>
+            <time>{props.timestamp}</time>
         </div>
     )
 }
