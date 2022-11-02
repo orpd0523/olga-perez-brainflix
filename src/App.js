@@ -9,13 +9,15 @@ import {useState} from "react"
 
 function App(props) {
   const  [videoDetails, setVideoDetails] = useState(videoDetailsData)
+  const [currentVideo, setCurrentVideo] = useState(videoDetails[0])
+  console.log(currentVideo)
   return (
     <div className="App">
       <Navigation />
-      <Video />
-      <VideoDetails />
-      <Comments />
-      <NextVideos />
+      <Video {...currentVideo}/>
+      <VideoDetails {...currentVideo}/>
+      <Comments {...currentVideo}/>
+      <NextVideos currentVideoId={currentVideo.id}/>
     </div>
   );
 }
