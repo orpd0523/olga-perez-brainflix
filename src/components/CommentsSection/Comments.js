@@ -1,6 +1,8 @@
 import "./Comments.scss"
+import {useState} from "react"
 
-function Comments() {
+function Comments(props) {
+    const [comments, setComments] = useState(props.comments)
     return(
             <section>
             <CommentsTitle/>
@@ -8,6 +10,11 @@ function Comments() {
             <Button/>
             <ProfileIcon/>
             <PostedComment/>
+            <ul>
+            {comments.map((comment) => {
+                    return(<li key={comment.id}>{comment.comment}</li>)
+                })}
+            </ul>
         </section>
     )
 }
