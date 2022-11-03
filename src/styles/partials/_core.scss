@@ -1,0 +1,20 @@
+@forward "fonts";
+@use "colors";
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "AvenirNextLTPro", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: colors.$white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

@@ -1,5 +1,7 @@
 import "./Comments.scss"
 import {useState} from "react"
+import bubble from "../../assets/icons/add_comment.svg" 
+import weekend from "../../assets/images/Mohan-muruge.jpg"
 
 function Comments(props) {
     const [comments, setComments] = useState(props.comments)
@@ -30,6 +32,7 @@ function CommentsTitle() {
 function AddComment() {
     return(
         <div>
+            <img alt="profile image" src={"#"}/>
             <label htmlFor="newComment">JOIN THE CONVERSATION
             <textarea name="newComment" placeholder="Add a new comment"/>
             </label>
@@ -39,7 +42,7 @@ function AddComment() {
 
 function Button(){
     return(
-        <button><img alt="#"/>COMMENT</button>
+        <button><img alt="#" src={bubble}/>COMMENT</button>
     )
 }
 
