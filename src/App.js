@@ -16,7 +16,10 @@ function App(props) {
       <Video {...currentVideo}/>
       <VideoDetails {...currentVideo}/>
       <Comments {...currentVideo}/>
-      <NextVideos currentVideoId={currentVideo.id}/>
+      <NextVideos 
+        currentVideoId={currentVideo.id}
+        setCurrentVideo={setCurrentVideo}
+      />
     </div>
   );
 }
