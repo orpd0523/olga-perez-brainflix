@@ -1,37 +1,29 @@
 import "./Navigation.scss";
-import logoImage from "../../assets/images/BrainFlix-logo.svg"
-import search from "../../assets/icons/search.svg"
-import upload from "../../assets/icons/upload.svg"
+import logoImage from "../../assets/images/BrainFlix-logo.svg";
+import search from "../../assets/icons/search.svg";
+import upload from "../../assets/icons/upload.svg";
 
 function Navigation() {
   return (
-    <header>
+    <header className="container">
       <nav>
-      <Logo />
-      <SearchBar />
-      <Button />
-      <ProfileIcon />
+        <div className="navigation__logo">
+          <img alt="brain flix logo" src={logoImage} />
+        </div>
+        <div className="navigation__search-bar">
+          <img alt="search icon" src={search} />
+          <input className="navigation__box" type="text" placeholder="Search" />
+        </div>
+        <Button />
+        <ProfileIcon />
       </nav>
     </header>
   );
 }
 
-function Logo() {
-  return <div><img alt="brain flix logo" src={logoImage}/></div>;
-}
-
-function SearchBar() {
-  return (
-    <div>
-      <img alt="search icon" src={search}/>
-      <input type="text" placeholder="Search" />
-    </div>
-  );
-}
-
 function Button() {
   return (
-    <button>
+    <button className="button">
       <img alt="upload icon" src={upload} />
       UPLOAD
     </button>
@@ -39,7 +31,7 @@ function Button() {
 }
 
 function ProfileIcon() {
-  return <div>{/*Logo Image Here*/}</div>;
+  return <div className="profile-icon">{/*Logo Image Here*/}</div>;
 }
 
 export default Navigation;

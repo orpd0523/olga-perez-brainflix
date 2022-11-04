@@ -2,8 +2,8 @@ import "./Video.scss"
 
 function Video() {
     return(
-        <section>
-            <video>
+        <section className="video">
+            <video className="video__box">
                 <source></source>
             </video>
         </section>

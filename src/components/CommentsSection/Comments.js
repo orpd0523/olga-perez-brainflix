@@ -6,7 +6,7 @@ import weekend from "../../assets/images/Mohan-muruge.jpg"
 function Comments(props) {
     const [comments, setComments] = useState(props.comments)
     return(
-            <section>
+            <section className="container">
             <CommentsTitle/>
             <AddComment/>
             <Button/>

@@ -1,0 +1,29 @@
+header {
+  display: flex;
+  flex-direction: row;
+ 
+}
+
+.navigation {
+  &__logo {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__search-bar{
+    border: 1px solid black;
+    input {border:0; outline:none;}
+    width: 13.75rem;
+    border-radius: .5rem;
+    padding: .5rem;
+    margin: 1rem;
+  }
+
+  &__box{
+    border-style: none;
+    padding-left: .75rem;
+  }
+}
