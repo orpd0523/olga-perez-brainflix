@@ -24,7 +24,7 @@ function Comments(props) {
 function CommentsTitle() {
     return(
         <section>
-            <h2>3 comments</h2>
+            <h2 className="typography typography--h2">3 comments</h2>
         </section>
     )
 }
@@ -55,9 +55,9 @@ function ProfileIcon(){
 function PostedComment(props){
     return(
         <div>
-            <h3>{props.name}</h3>
-            <p>{props.commentText}</p>
-            <time>{props.timestamp}</time>
+            <h3 className="typography typography--h3">{props.name}</h3>
+            <p className="typography">{props.commentText}</p>
+            <time className="typography typography--secondary">{props.timestamp}</time>
         </div>
     )
 }

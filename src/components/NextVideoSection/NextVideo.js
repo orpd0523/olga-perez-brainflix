@@ -14,7 +14,7 @@ function NextVideos(props) {
   }
   return (
     <section className="container">
-      <h3>NEXT VIDEOS</h3>
+      <h3 className="typography typography--secondary">NEXT VIDEOS</h3>
       <ul>
         {videos.map((video) => {
           return (
