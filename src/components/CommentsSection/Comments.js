@@ -2,6 +2,7 @@ import "./Comments.scss"
 import {useState} from "react"
 import bubble from "../../assets/icons/add_comment.svg" 
 import weekend from "../../assets/images/Mohan-muruge.jpg"
+import Button from "../Button/Button"
 
 function Comments(props) {
     const [comments, setComments] = useState(props.comments)
@@ -9,7 +10,7 @@ function Comments(props) {
             <section className="container">
             <CommentsTitle/>
             <AddComment/>
-            <Button/>
+            <Button alt="#" src={bubble}>COMMENT</Button>
             <ProfileIcon/>
             <PostedComment/>
             <ul>
@@ -39,12 +40,6 @@ function AddComment() {
         </div>
     );
 };
-
-function Button(){
-    return(
-        <button><img alt="#" src={bubble}/>COMMENT</button>
-    )
-}
 
 function ProfileIcon(){
     return(

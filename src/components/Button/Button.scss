@@ -1,0 +1,43 @@
+@use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/responsive" as responsiveness;
+@use "../../styles/partials/typography" as typography;
+
+.button {
+    height: 2.5rem;
+    min-width: 9.375rem;
+    width: 100%;
+    padding-inline: 2rem;
+    border-radius: .25rem;
+    background-color: colors.$blue;
+    border: colors.$blue;
+    color: colors.$white;
+    font-size: typography.$text-xs;
+    line-height: typography.$line-sm;
+    font-weight: typography.$font-bold;
+    position: relative;
+    &__prepend{
+        position: absolute;
+        height: 100%;
+        left: 0;
+        top: 0;
+        padding: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &:hover{
+        background-color: colors.$dark-blue;
+    }
+
+    &__icon{
+        height: typography.$line-sm;
+        width: auto;
+    }
+
+    // &__body{
+        
+    // }
+}
+
+    

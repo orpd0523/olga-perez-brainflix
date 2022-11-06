@@ -38,8 +38,7 @@ $font-reg: 400;
   }
 
   &--h2,
-  &--label,
-  &--button {
+  &--label {
     font-size: $text-xs;
     line-height: $line-sm;
     @extend %font-bold;

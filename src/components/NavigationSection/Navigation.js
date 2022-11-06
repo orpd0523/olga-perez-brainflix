@@ -2,6 +2,7 @@ import "./Navigation.scss";
 import logoImage from "../../assets/images/BrainFlix-logo.svg";
 import search from "../../assets/icons/search.svg";
 import upload from "../../assets/icons/upload.svg";
+import Button from "../Button/Button"
 
 function Navigation() {
   return (
@@ -14,19 +15,10 @@ function Navigation() {
           <img alt="search icon" src={search} />
           <input className="navigation__box" type="text" placeholder="Search" />
         </div>
-        <Button />
+        <Button alt="upload" src={upload}>UPLOAD</Button>
         <ProfileIcon />
       </nav>
     </header>
-  );
-}
-
-function Button() {
-  return (
-    <button className="button">
-      <img alt="upload icon" src={upload} />
-      UPLOAD
-    </button>
   );
 }
 
