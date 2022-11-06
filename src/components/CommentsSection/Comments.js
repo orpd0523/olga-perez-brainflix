@@ -1,56 +1,72 @@
-import "./Comments.scss"
-import {useState} from "react"
-import bubble from "../../assets/icons/add_comment.svg" 
-import weekend from "../../assets/images/Mohan-muruge.jpg"
-import Button from "../Button/Button"
-import Avatar from "../Avatar/Avatar"
-import TextField from "../TextField/TextField"
+import "./Comments.scss";
+import { useState } from "react";
+import bubble from "../../assets/icons/add_comment.svg";
+import weekend from "../../assets/images/Mohan-muruge.jpg";
+import Button from "../Button/Button";
+import Avatar from "../Avatar/Avatar";
+import TextField from "../TextField/TextField";
+import formatDate from "../../helpers/formatDate";
 
 function Comments(props) {
-    const [comments, setComments] = useState(props.comments)
-    return(
-            <section className="container">
-            <CommentsTitle/>
-            <AddComment/>
-            <Button alt="#" src={bubble}>COMMENT</Button>
-            <ul>
-            {comments.map((comment) => {
-                    return(<PostedComment key={comment.id} {...comment}/>)
-                })}
-            </ul>
-        </section>
-    )
+  const [comments, setComments] = useState(props.comments);
+  return (
+    <section className="container">
+      <CommentsTitle />
+      <AddComment />
+      <Button alt="#" src={bubble}>
+        COMMENT
+      </Button>
+      <ul className="comments">
+        {comments.map((comment) => {
+          return <PostedComment key={comment.id} {...comment} />;
+        })}
+      </ul>
+    </section>
+  );
 }
 
 function CommentsTitle() {
-    return(
-        <section>
-            <h2 className="typography typography--h2">3 comments</h2>
-        </section>
-    )
+  return (
+    <section>
+      <h2 className="typography typography--h2">3 comments</h2>
+    </section>
+  );
 }
 
 function AddComment() {
-    return(
-        <div>
-            <Avatar alt="avatar" src={weekend}/>
-            <TextField id="newComment" name="newComment" label="JOIN THE CONVERSATION" placeholder="Add a new comment"/>
-            {/* <label htmlFor="newComment">JOIN THE CONVERSATION
+  return (
+    <div>
+      <Avatar alt="avatar" src={weekend} />
+      <TextField
+        id="newComment"
+        name="newComment"
+        label="JOIN THE CONVERSATION"
+        placeholder="Add a new comment"
+      />
+      {/* <label htmlFor="newComment">JOIN THE CONVERSATION
             <textarea name="newComment" placeholder="Add a new comment"/>
             </label> */}
-        </div>
-    );
-};
+    </div>
+  );
+}
 
-function PostedComment(props){
-    return(
-        <li>
-            <Avatar/>
-            <h3 className="typography typography--h3">{props.name}</h3>
-            <p className="typography">{props.comment}</p>
-            <time className="typography typography--secondary">{props.timestamp}</time>
-        </li>
-    )
+function PostedComment(props) {
+  return (
+    <li className="comment">
+      <span className="comment__aside">
+        <Avatar />
+      </span>
+      <span className="comment__body">
+        <div className="comment__header">
+          <h3 className="typography typography--h3 comment__name">{props.name}</h3>
+          <time className="typography typography--secondary">
+            {formatDate(props.timestamp)}
+          </time>
+        </div>
+        <p className="typography comment__text">{props.comment}</p>
+      </span>
+    </li>
+  );
 }
 
 export default Comments;

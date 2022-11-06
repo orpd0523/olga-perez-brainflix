@@ -1,0 +1,39 @@
+@use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/typography" as typography;
+
+.comments{
+    list-style: none;
+    padding: 0;
+}
+
+.comment {
+    border-top: .0625rem solid colors.$mercury;
+    padding: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    &:last-child{
+        border-bottom: .0625rem solid colors.$mercury;
+    }
+
+    &__name{
+        margin: 0;
+    }
+
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    &__text{
+        margin: 0;
+    }
+
+
+    &__body{
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+}
