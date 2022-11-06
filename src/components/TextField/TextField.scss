@@ -1,0 +1,58 @@
+@use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/typography" as typography;
+
+.text-field{
+    margin: .25rem;
+
+    &__label{
+        font-weight: typography.$font-bold;
+        font-size: typography.$text-xs;
+        line-height: typography.$line-sm;
+        color: colors.$silver;
+    }
+
+    &__wrapper{
+        border: .0625rem solid colors.$mercury;
+        border-radius: .25rem;
+        padding: .5rem;
+        height: 2.25rem;
+        min-width: 15rem;
+        width: 100%;
+        display: flex;
+        background-color: colors.$alabaster;
+        color: colors.$black;
+        gap: .5rem;
+        &--active {
+        border: .125rem solid colors.$blue;
+        }
+        &--error {
+        border: .0625rem solid #D22D2D;
+        }
+    }
+
+    &__prepend{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__icon{
+        height: typography.$line-sm;
+        width: auto;
+    }
+
+    &__body{
+        flex-grow: 1;
+    }
+
+    &__input{
+        border:0; 
+        width: 100%;
+        outline:none;
+        margin:0;
+        height: 100%;
+        font-size: typography.$text-xs;
+        line-height: typography.$line-sm;
+        background-color: inherit;
+    }
+  }

@@ -5,6 +5,7 @@ import upload from "../../assets/icons/upload.svg";
 import Button from "../Button/Button"
 import Avatar from "../Avatar/Avatar";
 import weekend from "../../assets/images/Mohan-muruge.jpg";
+import TextField from "../TextField/TextField";
 
 function Navigation() {
   return (
@@ -13,10 +14,7 @@ function Navigation() {
         <div className="navigation__logo-container">
           <img className="navigation__logo"alt="brain flix logo" src={logoImage} />
         </div>
-        <div className="navigation__search-bar">
-          <img alt="search icon" src={search} />
-          <input className="navigation__box" type="text" placeholder="Search" />
-        </div>
+        <TextField alt="search icon" src={search} placeholder="Search"/>
         <Button alt="upload" src={upload}>UPLOAD</Button>
         <Avatar alt="avatar" src={weekend}/>
       </nav>

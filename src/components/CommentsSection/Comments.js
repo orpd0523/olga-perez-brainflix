@@ -4,6 +4,7 @@ import bubble from "../../assets/icons/add_comment.svg"
 import weekend from "../../assets/images/Mohan-muruge.jpg"
 import Button from "../Button/Button"
 import Avatar from "../Avatar/Avatar"
+import TextField from "../TextField/TextField"
 
 function Comments(props) {
     const [comments, setComments] = useState(props.comments)
@@ -33,9 +34,10 @@ function AddComment() {
     return(
         <div>
             <Avatar alt="avatar" src={weekend}/>
-            <label htmlFor="newComment">JOIN THE CONVERSATION
+            <TextField id="newComment" name="newComment" label="JOIN THE CONVERSATION" placeholder="Add a new comment"/>
+            {/* <label htmlFor="newComment">JOIN THE CONVERSATION
             <textarea name="newComment" placeholder="Add a new comment"/>
-            </label>
+            </label> */}
         </div>
     );
 };
