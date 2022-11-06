@@ -1,0 +1,42 @@
+@use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/typography" as typography;
+
+.next-videos{
+    list-style: none;
+    padding: 0;
+}
+
+
+.next-video{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: .5rem 0;
+
+    &__aside{
+        background-color: colors.$mercury;
+        height: 3.875rem;
+        width: 6.875rem;
+        border-radius: .25rem;
+    }
+
+    &__image{
+        height: inherit;
+        width: inherit;
+        border-radius: inherit;
+        object-fit: cover;
+    }
+    
+    &__body{
+        max-width: 10.125rem;
+    }
+
+    &__channel{
+        margin: 0;
+    }
+
+    &__title{
+        margin-top: 0;
+        margin-bottom: .5rem;
+    }
+}

@@ -23,6 +23,10 @@ $font-reg: 400;
   font-size: $text-sm;
   line-height: $line-xs;
 
+  &--font-reg{
+    font-weight: $font-reg;
+  }
+
   &--secondary {
     color: colors.$silver;
   }

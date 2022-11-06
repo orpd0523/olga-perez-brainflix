@@ -1,0 +1,16 @@
+@use "../../styles/partials/colors" as colors;
+
+.video{
+    background-color: colors.$dark-black;
+
+    &__container{
+        max-width: 80rem;
+        margin-inline: auto;
+    }
+
+    &__screen{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}

@@ -1,11 +1,15 @@
 import "./Video.scss"
 
-function Video() {
+function Video(props) {
+    console.log(props)
+    const {image} = props;
     return(
         <section className="video">
-            <video className="video__box">
+            <div className="video__container">
+            <video poster={image} className="video__screen">
                 <source></source>
             </video>
+            </div>
         </section>
     )
 }
