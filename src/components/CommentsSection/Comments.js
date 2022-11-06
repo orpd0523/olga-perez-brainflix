@@ -1,5 +1,5 @@
 import "./Comments.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import bubble from "../../assets/icons/add_comment.svg";
 import weekend from "../../assets/images/Mohan-muruge.jpg";
 import Button from "../Button/Button";
@@ -9,12 +9,15 @@ import formatDate from "../../helpers/formatDate";
 
 function Comments(props) {
   const [comments, setComments] = useState(props.comments);
+  useEffect(()=>{
+    setComments(props.comments)
+  },[props.comments])
   return (
     <section className="container">
       <CommentsTitle />
       <AddComment />
       <ul className="comments">
-        {comments.map((comment) => {
+        {comments.length>0&&comments.map((comment) => {
           return <PostedComment key={comment.id} {...comment} />;
         })}
       </ul>

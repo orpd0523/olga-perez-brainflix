@@ -10,6 +10,12 @@ import {useState} from "react"
 function App(props) {
   const  [videoDetails, setVideoDetails] = useState(videoDetailsData)
   const [currentVideo, setCurrentVideo] = useState(videoDetails[0])
+  function updateCurrentVideo(video){
+    const selectedVideo=videoDetails.find((vid)=>{
+     return vid.id === video.id
+    })
+    setCurrentVideo(selectedVideo)
+  }
   return (
     <div className="App">
       <Navigation />
@@ -18,7 +24,7 @@ function App(props) {
       <Comments {...currentVideo}/>
       <NextVideos 
         currentVideoId={currentVideo.id}
-        setCurrentVideo={setCurrentVideo}
+        setCurrentVideo={updateCurrentVideo}
       />
     </div>
   );

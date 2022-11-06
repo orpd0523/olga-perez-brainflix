@@ -1,6 +1,6 @@
 import "./NextVideos.scss";
 import videosData from "../../data/videos.json";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 
 function NextVideos(props) {
   const [videos, setVideos] = useState(() => {
@@ -8,6 +8,14 @@ function NextVideos(props) {
       return video.id !== props.currentVideoId;
     });
   });
+
+  useEffect(()=>{
+    setVideos(() => {
+      return videosData.filter((video) => {
+        return video.id !== props.currentVideoId;
+      });
+    })
+  },[props.currentVideoId])
 
   function handleClick(video) {
     props.setCurrentVideo(video);
@@ -24,10 +32,10 @@ function NextVideos(props) {
   );
 }
 
-function NextVideo(props) {
+function NextVideo({onClick, ...props}) {
   const { image, title, channel } = props;
   return (
-    <li className="next-video">
+    <li onClick={()=>onClick(props)} className="next-video">
       <span className="next-video__aside">
         <img className="next-video__image" alt={title} src={image} />
       </span>
