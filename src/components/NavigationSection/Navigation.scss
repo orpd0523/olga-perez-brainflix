@@ -5,12 +5,17 @@ header {
 }
 
 .navigation {
-  &__logo {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+  &__logo-container {
     display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+  }
+
+  &__logo{
+    max-height: 1.5625rem;
+    width: 7.5rem;
   }
 
   &__search-bar{

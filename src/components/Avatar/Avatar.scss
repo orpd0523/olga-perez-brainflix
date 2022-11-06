@@ -1,0 +1,22 @@
+@use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/responsive" as responsive;
+
+.avatar{
+    border: none;
+    border-radius: 50%;
+    background-color: colors.$mercury;
+    width: 2.25rem;
+    height: 2.25rem;
+    
+    &__image{
+        width: 100%;
+        height: 100%;  border-radius: inherit;
+        object-fit: cover;
+        object-position: left;
+    }
+
+    @include responsive.tablet{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

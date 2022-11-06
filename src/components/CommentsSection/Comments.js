@@ -3,6 +3,7 @@ import {useState} from "react"
 import bubble from "../../assets/icons/add_comment.svg" 
 import weekend from "../../assets/images/Mohan-muruge.jpg"
 import Button from "../Button/Button"
+import Avatar from "../Avatar/Avatar"
 
 function Comments(props) {
     const [comments, setComments] = useState(props.comments)
@@ -11,11 +12,9 @@ function Comments(props) {
             <CommentsTitle/>
             <AddComment/>
             <Button alt="#" src={bubble}>COMMENT</Button>
-            <ProfileIcon/>
-            <PostedComment/>
             <ul>
             {comments.map((comment) => {
-                    return(<li key={comment.id}>{comment.comment}</li>)
+                    return(<PostedComment key={comment.id} {...comment}/>)
                 })}
             </ul>
         </section>
@@ -33,7 +32,7 @@ function CommentsTitle() {
 function AddComment() {
     return(
         <div>
-            <img alt="profile image" src={"#"}/>
+            <Avatar alt="avatar" src={weekend}/>
             <label htmlFor="newComment">JOIN THE CONVERSATION
             <textarea name="newComment" placeholder="Add a new comment"/>
             </label>
@@ -41,19 +40,14 @@ function AddComment() {
     );
 };
 
-function ProfileIcon(){
-    return(
-        <div>{/*Logo Image Here*/}</div>
-    )
-}
-
 function PostedComment(props){
     return(
-        <div>
+        <li>
+            <Avatar/>
             <h3 className="typography typography--h3">{props.name}</h3>
-            <p className="typography">{props.commentText}</p>
+            <p className="typography">{props.comment}</p>
             <time className="typography typography--secondary">{props.timestamp}</time>
-        </div>
+        </li>
     )
 }
 
