@@ -13,9 +13,6 @@ function Comments(props) {
     <section className="container">
       <CommentsTitle />
       <AddComment />
-      <Button alt="#" src={bubble}>
-        COMMENT
-      </Button>
       <ul className="comments">
         {comments.map((comment) => {
           return <PostedComment key={comment.id} {...comment} />;
@@ -28,24 +25,29 @@ function Comments(props) {
 function CommentsTitle() {
   return (
     <section>
-      <h2 className="typography typography--h2">3 comments</h2>
+      <h2 className="typography typography--h2">3 Comments</h2>
     </section>
   );
 }
 
 function AddComment() {
   return (
-    <div>
-      <Avatar alt="avatar" src={weekend} />
-      <TextField
+    <div className="form">
+      <span className="form__aside">
+        <Avatar alt="avatar" src={weekend}/>
+      </span>
+      <form className="form__body">
+        <TextField
+        multiline={true}
         id="newComment"
         name="newComment"
         label="JOIN THE CONVERSATION"
         placeholder="Add a new comment"
       />
-      {/* <label htmlFor="newComment">JOIN THE CONVERSATION
-            <textarea name="newComment" placeholder="Add a new comment"/>
-            </label> */}
+      <Button alt="#" src={bubble}>
+        COMMENT
+      </Button>
+      </form>
     </div>
   );
 }

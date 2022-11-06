@@ -6,6 +6,21 @@
     padding: 0;
 }
 
+.form{
+    display: flex;
+    gap: 1rem;
+
+    &__body{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__aside{
+        padding-top: 1.5rem;
+    }
+}
+
 .comment {
     border-top: .0625rem solid colors.$mercury;
     padding: 1rem 0;
