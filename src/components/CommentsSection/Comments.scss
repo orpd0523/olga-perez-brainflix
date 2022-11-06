@@ -1,5 +1,6 @@
 @use "../../styles/partials/colors" as colors;
 @use "../../styles/partials/typography" as typography;
+@use "../../styles/partials/responsive" as responsive;
 
 .comments{
     list-style: none;
@@ -14,11 +15,33 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        flex-grow: 1;
+    
+} 
+
+@include responsive.tablet{
+    gap: 1.5rem;
+
+    &__button-container{
+        margin-top: 1rem;
     }
+
+    &__field-container{
+        flex-grow: 1;
+    }
+
+    &__body{
+        
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+}
 
     &__aside{
         padding-top: 1.5rem;
     }
+
+   
 }
 
 .comment {
@@ -50,5 +73,6 @@
         gap: 1rem;
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
     }
 }

@@ -27,9 +27,7 @@ function Comments(props) {
 
 function CommentsTitle() {
   return (
-    <section>
       <h2 className="typography typography--h2">3 Comments</h2>
-    </section>
   );
 }
 
@@ -40,6 +38,7 @@ function AddComment() {
         <Avatar alt="avatar" src={weekend}/>
       </span>
       <form className="form__body">
+        <div className="form__field-container">
         <TextField
         multiline={true}
         id="newComment"
@@ -47,9 +46,12 @@ function AddComment() {
         label="JOIN THE CONVERSATION"
         placeholder="Add a new comment"
       />
+      </div>
+      <div className="form__button-container">
       <Button alt="#" src={bubble}>
         COMMENT
       </Button>
+      </div>
       </form>
     </div>
   );

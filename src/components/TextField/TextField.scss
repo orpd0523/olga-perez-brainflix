@@ -1,5 +1,6 @@
 @use "../../styles/partials/colors" as colors;
 @use "../../styles/partials/typography" as typography;
+@use "../../styles/partials/responsive" as responsive;
 
 .text-field{
 
@@ -30,7 +31,14 @@
         &--multiline{
             height: calc(3*2.25rem);
         }
+        @include responsive.tablet{
+            height: 2.5rem;
+            &--multiline{
+                height: 2.25rem;
+            }
+        }
     }
+
 
     &__prepend{
         height: 100%;
