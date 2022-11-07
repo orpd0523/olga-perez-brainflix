@@ -22,7 +22,7 @@ function NextVideos(props) {
   }
   return (
     <section>
-      <h3 className="typography typography--secondary typography--font-reg">NEXT VIDEOS</h3>
+      <h3 className="typography typography--secondary typography--font-reg next-videos__title">NEXT VIDEOS</h3>
       <ul className="next-videos">
         {videos.map((video) => {
           return <NextVideo onClick={handleClick} key={video.id} {...video} />;
