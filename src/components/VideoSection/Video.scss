@@ -1,12 +1,49 @@
 @use "../../styles/partials/colors" as colors;
 @use "../../styles/partials/responsive" as responsive;
-
+@use "../../styles/partials/typography" as typography;
 .video {
   background-color: colors.$dark-black;
 
   &__container {
     max-width: 65rem;
     margin-inline: auto;
+    position: relative;
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    padding-inline: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+  }
+
+  &__icon {
+    height: 1rem;
+    width: auto;
+  }
+
+  &__progress-bar {
+    background-color: inherit;
+    height: .25rem;
+    flex-grow: 1;
+  }
+
+  &__control {
+    background-color: colors.$dark-black-50;
+    color: colors.$white;
+    border-radius: 0.25rem;
+    font-size: typography.$text-xs;
+    line-height: typography.$line-sm;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    &--center {
+      flex-grow: 1;
+    }
   }
 
   @include responsive.tablet {
