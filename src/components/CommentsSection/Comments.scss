@@ -53,6 +53,10 @@
         border-bottom: .0625rem solid colors.$mercury;
     }
 
+    @include responsive.tablet{
+        gap: 1.5rem;
+    }
+
     &__name{
         margin: 0;
     }

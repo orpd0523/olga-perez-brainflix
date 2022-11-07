@@ -1,0 +1,43 @@
+@use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/responsive" as responsive;
+@use "../../styles/partials/typography" as typography;
+
+.details {
+  border-top: 0.0625rem solid colors.$mercury;
+  border-bottom: 0.0625rem solid colors.$mercury;
+  display: flex;
+  justify-content: space-between;
+
+  &__col{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+
+  &__text{
+    margin: 0;
+  }
+
+  &__icon{
+    height: typography.$line-xs;
+    width: auto;
+  }
+
+  @include responsive.tablet {
+    border-top: none;
+    &__col {
+      flex-direction: row;
+      gap: 1.5rem;
+      align-items: center;
+    }
+  }
+}
+
+.metric{
+    margin: 0;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
