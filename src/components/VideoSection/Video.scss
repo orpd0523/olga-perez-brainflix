@@ -1,11 +1,16 @@
 @use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/responsive" as responsive;
 
 .video{
     background-color: colors.$dark-black;
 
     &__container{
-        max-width: 80rem;
+        max-width: 65rem;
         margin-inline: auto;
+    }
+
+    @include responsive.tablet{
+        padding-inline: 2.25rem;
     }
 
     &__screen{
