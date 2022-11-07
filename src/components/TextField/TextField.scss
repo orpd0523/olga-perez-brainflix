@@ -2,67 +2,65 @@
 @use "../../styles/partials/typography" as typography;
 @use "../../styles/partials/responsive" as responsive;
 
-.text-field{
+.text-field {
+  &__label {
+    font-weight: typography.$font-bold;
+    font-size: typography.$text-xs;
+    line-height: typography.$line-sm;
+    color: colors.$silver;
+  }
 
-    &__label{
-        font-weight: typography.$font-bold;
-        font-size: typography.$text-xs;
-        line-height: typography.$line-sm;
-        color: colors.$silver;
+  &__wrapper {
+    border: 0.0625rem solid colors.$mercury;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    height: 2.25rem;
+    min-width: 15rem;
+    width: 100%;
+    display: flex;
+    background-color: colors.$alabaster;
+    color: colors.$black;
+    gap: 0.5rem;
+    &--active {
+      border: 0.125rem solid colors.$blue;
     }
-
-    &__wrapper{
-        border: .0625rem solid colors.$mercury;
-        border-radius: .25rem;
-        padding: .5rem;
+    &--error {
+      border: 0.0625rem solid #d22d2d;
+    }
+    &--multiline {
+      height: calc(3 * 2.25rem);
+    }
+    @include responsive.tablet {
+      height: 2.5rem;
+      &--multiline {
         height: 2.25rem;
-        min-width: 15rem;
-        width: 100%;
-        display: flex;
-        background-color: colors.$alabaster;
-        color: colors.$black;
-        gap: .5rem;
-        &--active {
-        border: .125rem solid colors.$blue;
-        }
-        &--error {
-        border: .0625rem solid #D22D2D;
-        }
-        &--multiline{
-            height: calc(3*2.25rem);
-        }
-        @include responsive.tablet{
-            height: 2.5rem;
-            &--multiline{
-                height: 2.25rem;
-            }
-        }
-    }
-
-
-    &__prepend{
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    &__icon{
-        height: typography.$line-sm;
-        width: auto;
-    }
-
-    &__body{
-        flex-grow: 1;
-    }
-
-    &__input{
-        border:0; 
-        width: 100%;
-        outline:none;
-        margin:0;
-        height: 100%;
-        font-size: typography.$text-xs;
-        line-height: typography.$line-sm;
-        background-color: inherit;
+      }
     }
   }
+
+  &__prepend {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__icon {
+    height: typography.$line-sm;
+    width: auto;
+  }
+
+  &__body {
+    flex-grow: 1;
+  }
+
+  &__input {
+    border: 0;
+    width: 100%;
+    outline: none;
+    margin: 0;
+    height: 100%;
+    font-size: typography.$text-xs;
+    line-height: typography.$line-sm;
+    background-color: inherit;
+  }
+}

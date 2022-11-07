@@ -8,26 +8,26 @@
   display: flex;
   justify-content: space-between;
 
-  &__col{
+  &__col {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
-  &__text{
+  &__text {
     margin: 0;
   }
 
-  &__icon{
+  &__icon {
     height: typography.$line-xs;
     width: auto;
   }
 
-  &__description{
+  &__description {
     padding: 1rem 0;
-    margin: 0;    
+    margin: 0;
   }
 
   @include responsive.tablet {
@@ -38,20 +38,20 @@
       align-items: center;
     }
 
-    &__description{
+    &__description {
       padding: 1.5rem 0;
     }
   }
 
-  @include responsive.desktop{
+  @include responsive.desktop {
     padding-right: 1.5rem;
-   //border-right: .0625rem solid colors.$mercury;
+    //border-right: .0625rem solid colors.$mercury;
   }
 }
 
-.metric{
-    margin: 0;
-    display: flex;
-    gap: .5rem;
-    align-items: center;
+.metric {
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }

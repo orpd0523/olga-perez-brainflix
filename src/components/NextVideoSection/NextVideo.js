@@ -1,6 +1,6 @@
 import "./NextVideos.scss";
 import videosData from "../../data/videos.json";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 function NextVideos(props) {
   const [videos, setVideos] = useState(() => {
@@ -9,20 +9,22 @@ function NextVideos(props) {
     });
   });
 
-  useEffect(()=>{
+  useEffect(() => {
     setVideos(() => {
       return videosData.filter((video) => {
         return video.id !== props.currentVideoId;
       });
-    })
-  },[props.currentVideoId])
+    });
+  }, [props.currentVideoId]);
 
   function handleClick(video) {
     props.setCurrentVideo(video);
   }
   return (
     <section>
-      <h3 className="typography typography--secondary typography--font-reg next-videos__title">NEXT VIDEOS</h3>
+      <h3 className="typography typography--secondary typography--font-reg next-videos__title">
+        NEXT VIDEOS
+      </h3>
       <ul className="next-videos">
         {videos.map((video) => {
           return <NextVideo onClick={handleClick} key={video.id} {...video} />;
@@ -32,10 +34,10 @@ function NextVideos(props) {
   );
 }
 
-function NextVideo({onClick, ...props}) {
+function NextVideo({ onClick, ...props }) {
   const { image, title, channel } = props;
   return (
-    <li onClick={()=>onClick(props)} className="next-video">
+    <li onClick={() => onClick(props)} className="next-video">
       <span className="next-video__aside">
         <img className="next-video__image" alt={title} src={image} />
       </span>

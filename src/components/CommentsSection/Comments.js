@@ -9,17 +9,18 @@ import formatDate from "../../helpers/formatDate";
 
 function Comments(props) {
   const [comments, setComments] = useState(props.comments);
-  useEffect(()=>{
-    setComments(props.comments)
-  },[props.comments])
+  useEffect(() => {
+    setComments(props.comments);
+  }, [props.comments]);
   return (
     <section className="border">
       <CommentsTitle />
       <AddComment />
       <ul className="comments">
-        {comments.length>0&&comments.map((comment) => {
-          return <PostedComment key={comment.id} {...comment} />;
-        })}
+        {comments.length > 0 &&
+          comments.map((comment) => {
+            return <PostedComment key={comment.id} {...comment} />;
+          })}
       </ul>
     </section>
   );
@@ -27,7 +28,7 @@ function Comments(props) {
 
 function CommentsTitle() {
   return (
-      <h2 className="typography typography--h2 comments__title">3 Comments</h2>
+    <h2 className="typography typography--h2 comments__title">3 Comments</h2>
   );
 }
 
@@ -35,23 +36,23 @@ function AddComment() {
   return (
     <div className="form">
       <span className="form__aside">
-        <Avatar alt="avatar" src={weekend}/>
+        <Avatar alt="avatar" src={weekend} />
       </span>
       <form className="form__body">
         <div className="form__field-container">
-        <TextField
-        multiline={true}
-        id="newComment"
-        name="newComment"
-        label="JOIN THE CONVERSATION"
-        placeholder="Add a new comment"
-      />
-      </div>
-      <div className="form__button-container">
-      <Button alt="#" src={bubble}>
-        COMMENT
-      </Button>
-      </div>
+          <TextField
+            multiline={true}
+            id="newComment"
+            name="newComment"
+            label="JOIN THE CONVERSATION"
+            placeholder="Add a new comment"
+          />
+        </div>
+        <div className="form__button-container">
+          <Button alt="#" src={bubble}>
+            COMMENT
+          </Button>
+        </div>
       </form>
     </div>
   );
@@ -65,7 +66,9 @@ function PostedComment(props) {
       </span>
       <span className="comment__body">
         <div className="comment__header">
-          <h3 className="typography typography--h3 comment__name">{props.name}</h3>
+          <h3 className="typography typography--h3 comment__name">
+            {props.name}
+          </h3>
           <time className="typography typography--secondary">
             {formatDate(props.timestamp)}
           </time>

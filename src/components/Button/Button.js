@@ -5,7 +5,7 @@ function Button(props) {
   return (
     <button className="button">
       <span className="button__prepend">
-        <img className="button__icon"alt={alt} src={src} />
+        <img className="button__icon" alt={alt} src={src} />
       </span>
       <span className="button__body">{children}</span>
     </button>

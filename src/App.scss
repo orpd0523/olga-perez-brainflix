@@ -1,15 +1,14 @@
 @use "./styles/partials/responsive" as responsive;
 
-.app{
-    @include responsive.desktop{
-        &__body{
-            display: flex;
-            //gap: 1.5rem;
-
-        }
-
-        &__video{
-            max-width: 70%;
-        }
+.app {
+  @include responsive.desktop {
+    &__body {
+      display: flex;
+      //gap: 1.5rem;
     }
+
+    &__video {
+      max-width: 70%;
+    }
+  }
 }

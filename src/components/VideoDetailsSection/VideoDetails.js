@@ -9,7 +9,9 @@ function VideoDetails(props) {
       <h1 className="typography typography--h1">{props.title}</h1>
       <div className="details">
         <span className="details__col">
-          <h2 className="typography typography--h2 details__text">By {props.channel}</h2>
+          <h2 className="typography typography--h2 details__text">
+            By {props.channel}
+          </h2>
           <time className="typography typography--secondary details__text">
             {formatDate(props.timestamp)}
           </time>
@@ -17,11 +19,9 @@ function VideoDetails(props) {
         <span className="details__col">
           <p className="typography typography--secondary metric">
             <span className="metric__aside">
-            <img className="details__icon" alt="views icon" src={eye} />
+              <img className="details__icon" alt="views icon" src={eye} />
             </span>
-            <span className="metric__body">
-                {props.views}
-            </span>
+            <span className="metric__body">{props.views}</span>
           </p>
           <p className="typography typography--secondary metric">
             <img className="details__icon" alt="like icon" src={heart} />

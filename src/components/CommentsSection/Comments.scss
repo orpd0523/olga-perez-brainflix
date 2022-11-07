@@ -6,10 +6,10 @@
   list-style: none;
   padding: 0;
 
-    &__title{
-        margin: 0;
-        padding-bottom: 1rem;
-    }
+  &__title {
+    margin: 0;
+    padding-bottom: 1rem;
+  }
 }
 
 .form {
@@ -44,9 +44,9 @@
     padding-top: 1.5rem;
   }
 
-  @include responsive.desktop{
+  @include responsive.desktop {
     padding-right: 1.5rem;
-    border-right: .0625rem solid colors.$mercury;
+    border-right: 0.0625rem solid colors.$mercury;
   }
 }
 
@@ -84,11 +84,11 @@
     flex-grow: 1;
   }
 
-  @include responsive.desktop{
+  @include responsive.desktop {
     padding-right: 1.5rem;
-    border-right: .0625rem solid colors.$mercury;
+    border-right: 0.0625rem solid colors.$mercury;
     &:last-child {
-        border-bottom: none;
-      }
+      border-bottom: none;
+    }
   }
 }

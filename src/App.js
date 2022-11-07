@@ -7,8 +7,8 @@ import NextVideos from "./components/NextVideoSection/NextVideo";
 import videoDetailsData from "./data/video-details.json";
 import { useState } from "react";
 
-function App(props) {
-  const [videoDetails, setVideoDetails] = useState(videoDetailsData);
+function App() {
+  const [videoDetails] = useState(videoDetailsData);
   const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
   function updateCurrentVideo(video) {
     const selectedVideo = videoDetails.find((vid) => {
