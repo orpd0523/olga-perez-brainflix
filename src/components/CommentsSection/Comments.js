@@ -13,7 +13,7 @@ function Comments(props) {
     setComments(props.comments)
   },[props.comments])
   return (
-    <section className="container">
+    <section>
       <CommentsTitle />
       <AddComment />
       <ul className="comments">

@@ -29,6 +29,7 @@
   }
 
   &__search {
+    max-width: 80%;
     margin-right: 1rem;
     flex-grow: 1;
   }
@@ -38,7 +39,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
+
     &__main {
       flex-wrap: nowrap;
       flex-direction: row;

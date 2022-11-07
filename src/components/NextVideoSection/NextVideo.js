@@ -21,7 +21,7 @@ function NextVideos(props) {
     props.setCurrentVideo(video);
   }
   return (
-    <section className="container">
+    <section>
       <h3 className="typography typography--secondary typography--font-reg">NEXT VIDEOS</h3>
       <ul className="next-videos">
         {videos.map((video) => {

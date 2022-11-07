@@ -5,7 +5,7 @@ import formatDate from "../../helpers/formatDate.js";
 
 function VideoDetails(props) {
   return (
-    <section className="container">
+    <section>
       <h1 className="typography typography--h1">{props.title}</h1>
       <div className="details">
         <span className="details__col">

@@ -1,5 +1,6 @@
 @use "../../styles/partials/colors" as colors;
 @use "../../styles/partials/typography" as typography;
+@use "../../styles/partials/responsive" as responsive;
 
 .next-videos{
     list-style: none;
@@ -38,5 +39,14 @@
     &__title{
         margin-top: 0;
         margin-bottom: .5rem;
+    }
+    
+    @include responsive.tablet{
+        border-left: 1px solid colors.$mercury;
+        padding-left: 1.5rem;
+
+        &__body{
+            max-width: 200px;
+        }
     }
 }
