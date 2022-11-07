@@ -42,7 +42,7 @@
     }
     
     @include responsive.tablet{
-        border-left: 1px solid colors.$mercury;
+        // border-left: 1px solid colors.$mercury;
         padding-left: 1.5rem;
 
         &__body{

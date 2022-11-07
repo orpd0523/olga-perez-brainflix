@@ -13,7 +13,7 @@ function Comments(props) {
     setComments(props.comments)
   },[props.comments])
   return (
-    <section>
+    <section className="border">
       <CommentsTitle />
       <AddComment />
       <ul className="comments">
@@ -27,7 +27,7 @@ function Comments(props) {
 
 function CommentsTitle() {
   return (
-      <h2 className="typography typography--h2">3 Comments</h2>
+      <h2 className="typography typography--h2 comments__title">3 Comments</h2>
   );
 }
 
