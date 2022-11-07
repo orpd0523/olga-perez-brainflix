@@ -1,7 +1,6 @@
 import "./Video.scss"
 
 function Video(props) {
-    console.log(props)
     const {image} = props;
     return(
         <section className="video">
