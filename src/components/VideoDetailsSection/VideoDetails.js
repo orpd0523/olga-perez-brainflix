@@ -29,7 +29,7 @@ function VideoDetails(props) {
           </p>
         </span>
       </div>
-      <p className="typography">{props.description}</p>
+      <p className="typography details__description">{props.description}</p>
     </section>
   );
 }

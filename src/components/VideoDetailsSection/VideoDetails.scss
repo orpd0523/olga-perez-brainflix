@@ -25,12 +25,20 @@
     width: auto;
   }
 
+  &__description{
+    margin: 1rem 0;    
+  }
+
   @include responsive.tablet {
     border-top: none;
     &__col {
       flex-direction: row;
       gap: 1.5rem;
       align-items: center;
+    }
+
+    &__description{
+      margin: 1.5rem 0;
     }
   }
 }
