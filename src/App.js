@@ -1,11 +1,10 @@
 import "./App.scss";
 import Navigation from "./components/NavigationSection/Navigation";
-import Video from "./components/VideoSection/Video";
-import VideoDetails from "./components/VideoDetailsSection/VideoDetails";
-import Comments from "./components/CommentsSection/Comments";
-import NextVideos from "./components/NextVideoSection/NextVideo";
 import videoDetailsData from "./data/video-details.json";
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import VideoPage from "./components/VideoPage/VideoPage";
+import UploadVideo from "./components/UploadVideo/UploadVideo";
 
 function App() {
   const [videoDetails] = useState(videoDetailsData);
@@ -17,22 +16,32 @@ function App() {
     setCurrentVideo(selectedVideo);
   }
   return (
-    <div className="app">
-      <Navigation />
-      <Video {...currentVideo} />
-      <div className="app__body container">
-        <div className="app__video">
-          <VideoDetails {...currentVideo} />
-          <Comments {...currentVideo} />
-        </div>
-        <div className="app__aside">
-          <NextVideos
-            currentVideoId={currentVideo.id}
-            setCurrentVideo={updateCurrentVideo}
-          />
-        </div>
+    <BrowserRouter>
+      <div className="app">
+        <Navigation />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <VideoPage
+                currentVideo={currentVideo}
+                updateCurrentVideo={updateCurrentVideo}
+              />
+            }
+          ></Route>
+          <Route path="upload" element={<UploadVideo />}></Route>
+          <Route
+            path="videos/:videoid"
+            element={
+              <VideoPage
+                currentVideo={currentVideo}
+                updateCurrentVideo={updateCurrentVideo}
+              />
+            }
+          ></Route>
+        </Routes>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
