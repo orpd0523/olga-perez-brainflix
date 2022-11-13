@@ -9,7 +9,7 @@ import axios from 'axios';
 
   function App() {
     useEffect(() =>{
-      axios.get('https://project-2-api.herokuapp.com')
+      axios.get('https://project-2-api.herokuapp.com/videos?api_key=219e369b-90a6-41bf-b7ae-59ad7724b87f')
         .then(response =>{
         console.log(response)
       });
