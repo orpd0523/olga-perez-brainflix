@@ -1,26 +1,11 @@
 import "./NextVideos.scss";
-import videosData from "../../data/videos.json";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function NextVideos(props) {
-  const [videos, setVideos] = useState(() => {
-    return videosData.filter((video) => {
-      return video.id !== props.currentVideoId;
-    });
+
+  const videos = props.videos.filter((video) => {
+    return video.id !== props.currentVideoId;
   });
-
-  useEffect(() => {
-    setVideos(() => {
-      return videosData.filter((video) => {
-        return video.id !== props.currentVideoId;
-      });
-    });
-  }, [props.currentVideoId]);
-
-  function handleClick(video) {
-    props.setCurrentVideo(video);
-  }
   return (
     <section>
       <h3 className="typography typography--secondary typography--font-reg next-videos__title">
@@ -29,18 +14,18 @@ function NextVideos(props) {
       <ul className="next-videos">
         {videos.map((video) => {
           return(
-            <NextVideo onClick={handleClick} key={video.id} {...video} />
+            <NextVideo key={video.id} {...video} />
         )})}
       </ul>
     </section>
   );
 }
 
-function NextVideo({ onClick, ...props }) {
+function NextVideo({ ...props }) {
   const { image, title, channel, id } = props;
   return (
     <Link to={`/videos/${id}`} >
-      <li onClick={() => onClick(props)} className="next-video">
+      <li className="next-video">
         <span className="next-video__aside">
           <img className="next-video__image" alt={title} src={image} />
         </span>

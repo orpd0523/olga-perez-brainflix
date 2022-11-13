@@ -8,10 +8,7 @@ import TextField from "../TextField/TextField";
 import formatDate from "../../helpers/formatDate";
 
 function Comments(props) {
-  const [comments, setComments] = useState(props.comments);
-  useEffect(() => {
-    setComments(props.comments);
-  }, [props.comments]);
+  const { comments = [] } = props;
   return (
     <section className="border">
       <CommentsTitle />
