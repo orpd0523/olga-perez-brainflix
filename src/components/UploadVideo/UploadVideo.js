@@ -16,8 +16,12 @@ function UploadVideo() {
 }
 
 function UploadForm(props) {
+    const handleSubmit = (event)=>{
+        event.preventDefault()
+        window.alert("uploaded")
+    }
   return (
-    <form className="upload-form">
+    <form onSubmit= {handleSubmit}className="upload-form">
       <div className="upload-form__body">
         <span className="upload-form__aside">
           <small className="typography typography--secondary">
@@ -42,7 +46,7 @@ function UploadForm(props) {
       </div>
       <div className="upload-form__button-group">
         <span>
-          <Button alt="publish" src={publish}>
+          <Button type= "submit" alt="publish" src={publish}>
             PUBLISH
           </Button>
         </span>
