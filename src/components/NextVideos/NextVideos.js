@@ -7,7 +7,7 @@ function NextVideos(props) {
       return video.id !== props.currentVideoId;
     });
     return (
-      <section>
+      <>
         <h3 className="typography typography--secondary typography--font-reg next-videos__title">
           NEXT VIDEOS
         </h3>
@@ -17,7 +17,7 @@ function NextVideos(props) {
               <NextVideo key={video.id} {...video} />
           )})}
         </ul>
-      </section>
+      </>
     );
   }
 

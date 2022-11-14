@@ -20,21 +20,21 @@ useEffect(()=>{
 
   const {comments} = currentVideo
   return (
-    <div>
+    <main>
       <Video {...currentVideo}/>
       <div className="app__body container">
         <div className="app__video">
           <VideoDetails {...currentVideo} />
           <Comments comments={comments}/>
         </div>
-        <div className="app__aside">
+        <section className="app__aside">
           <NextVideos
             currentVideoId={currentVideo.id}
             videos={videos}
           /> 
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }
 
