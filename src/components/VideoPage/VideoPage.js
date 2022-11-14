@@ -1,13 +1,13 @@
 import Video from "../VideoSection/Video";
 import VideoDetails from "../VideoDetailsSection/VideoDetails";
 import Comments from "../CommentsSection/Comments";
-import NextVideos from "../NextVideoSection/NextVideo";
+import NextVideos from "../NextVideos/NextVideos";
 import axios from 'axios';
 import { useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 
 function VideoPage(props) {
-  const {videos} = props;
+  const {videos, comments} = props;
   const {videoid = videos[0].id} = useParams()
   const [currentVideo, setCurrentVideo] = useState({});
 useEffect(()=>{
@@ -23,7 +23,7 @@ useEffect(()=>{
       <div className="app__body container">
         <div className="app__video">
           <VideoDetails {...currentVideo} />
-          <Comments {...currentVideo} />
+          <Comments comments = {comments}/>
         </div>
         <div className="app__aside">
           <NextVideos

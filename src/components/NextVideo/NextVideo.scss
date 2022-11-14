@@ -2,16 +2,6 @@
 @use "../../styles/partials/typography" as typography;
 @use "../../styles/partials/responsive" as responsive;
 
-.next-videos {
-  list-style: none;
-  padding: 0;
-  @include responsive.desktop {
-    &__title {
-      padding-left: 1.5rem;
-    }
-  }
-}
-
 .next-video {
   display: flex;
   align-items: center;
