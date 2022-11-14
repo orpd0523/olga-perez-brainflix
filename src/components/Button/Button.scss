@@ -8,13 +8,20 @@
   width: 100%;
   padding-inline: 2rem;
   border-radius: 0.25rem;
-  background-color: colors.$blue;
-  border: colors.$blue;
-  color: colors.$white;
   font-size: typography.$text-xs;
   line-height: typography.$line-sm;
   font-weight: typography.$font-bold;
   position: relative;
+  &--primary {
+    background-color: colors.$blue;
+    border: colors.$blue;
+    color: colors.$white;
+  }
+  &--secondary {
+    background-color: colors.$white;
+    border: colors.$white;
+    color: colors.$blue;
+  }
   &__prepend {
     position: absolute;
     height: 100%;

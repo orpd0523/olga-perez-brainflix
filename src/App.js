@@ -1,38 +1,41 @@
 import "./App.scss";
 import Navigation from "./components/NavigationSection/Navigation";
-import Video from "./components/VideoSection/Video";
-import VideoDetails from "./components/VideoDetailsSection/VideoDetails";
-import Comments from "./components/CommentsSection/Comments";
-import NextVideos from "./components/NextVideoSection/NextVideo";
-import videoDetailsData from "./data/video-details.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import VideoPage from "./components/VideoPage/VideoPage";
+import UploadVideo from "./components/UploadVideo/UploadVideo";
+import axios from 'axios';
 
-function App() {
-  const [videoDetails] = useState(videoDetailsData);
-  const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
-  function updateCurrentVideo(video) {
-    const selectedVideo = videoDetails.find((vid) => {
-      return vid.id === video.id;
-    });
-    setCurrentVideo(selectedVideo);
-  }
+  function App() {
+    useEffect(() =>{
+      axios.get('https://project-2-api.herokuapp.com/videos?api_key=219e369b-90a6-41bf-b7ae-59ad7724b87f')
+        .then(response =>{
+          setVideos(response.data)
+      })
+    }, [])
+  
+   const [videos, setVideos] = useState([]); 
   return (
-    <div className="app">
-      <Navigation />
-      <Video {...currentVideo} />
-      <div className="app__body container">
-        <div className="app__video">
-          <VideoDetails {...currentVideo} />
-          <Comments {...currentVideo} />
-        </div>
-        <div className="app__aside">
-          <NextVideos
-            currentVideoId={currentVideo.id}
-            setCurrentVideo={updateCurrentVideo}
-          />
-        </div>
+    <BrowserRouter>
+      <div className="app">
+        <Navigation />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>{videos.length > 0 && <VideoPage videos={videos}/>}</>
+            }
+          ></Route>
+          <Route path="upload" element={<UploadVideo />}></Route>
+          <Route
+            path="videos/:videoid"
+            element={
+              <VideoPage videos={videos}/>
+            }
+          ></Route>
+        </Routes> 
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 

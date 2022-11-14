@@ -1,0 +1,5 @@
+@use "../../styles/partials/colors" as colors;
+
+.upload-section{
+    border-top: .0625rem solid colors.$mercury
+}
