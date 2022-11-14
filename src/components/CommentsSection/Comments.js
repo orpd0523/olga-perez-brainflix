@@ -1,5 +1,5 @@
 import "./Comments.scss";
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 import bubble from "../../assets/icons/add_comment.svg";
 import weekend from "../../assets/images/Mohan-muruge.jpg";
 import Button from "../Button/Button";
