@@ -1,13 +1,14 @@
 import Button from "../Button/Button";
 import TextField from "../TextField/TextField";
 import publish from "../../assets/icons/publish.svg";
+import videoPreview from "../../assets/images/Upload-video-preview.jpg";
 
 function UploadVideo() {
   return (
-    <div>
+    <section className="container">
       <h1 className="typography typography--h1">Upload Video</h1>
       <UploadForm/>
-    </div>
+    </section>
   );
 }
 
@@ -16,8 +17,8 @@ function UploadForm(props) {
     <form>
       <div>
         <span>
-          <small>VIDEO THUMBNAIL</small>
-          <img alt="#" src="#" />
+          <small className="typography typography--secondary">VIDEO THUMBNAIL</small>
+          <img alt="video preview" src={videoPreview} />
         </span>
         <span>
           <TextField label="TITLE YOUR VIDEO" />
