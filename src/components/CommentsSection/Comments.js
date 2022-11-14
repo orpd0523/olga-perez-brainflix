@@ -1,11 +1,10 @@
 import "./Comments.scss";
-//import { useState, useEffect } from "react";
 import bubble from "../../assets/icons/add_comment.svg";
 import weekend from "../../assets/images/Mohan-muruge.jpg";
 import Button from "../Button/Button";
 import Avatar from "../Avatar/Avatar";
 import TextField from "../TextField/TextField";
-import formatDate from "../../helpers/formatDate";
+import Comment from "../Comment/Comment.js"
 
 function Comments(props) {
   const { comments = [] } = props;
@@ -16,12 +15,11 @@ function Comments(props) {
       <ul className="comments">
         {comments.length > 0 &&
           comments.map((comment) => {
-            return <PostedComment key={comment.id} {...comment} />;
+            return <Comment key={comment.id} {...comment} />;
           })}
       </ul>
     </section>
   );
-}
 
 function CommentsTitle() {
   return (
@@ -54,26 +52,6 @@ function AddComment() {
     </div>
   );
 }
-
-function PostedComment(props) {
-  return (
-    <li className="comment">
-      <span className="comment__aside">
-        <Avatar />
-      </span>
-      <span className="comment__body">
-        <div className="comment__header">
-          <h3 className="typography typography--h3 comment__name">
-            {props.name}
-          </h3>
-          <time className="typography typography--secondary">
-            {formatDate(props.timestamp)}
-          </time>
-        </div>
-        <p className="typography comment__text">{props.comment}</p>
-      </span>
-    </li>
-  );
 }
 
 export default Comments;

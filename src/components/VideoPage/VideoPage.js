@@ -7,7 +7,7 @@ import { useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 
 function VideoPage(props) {
-  const {videos, comments} = props;
+  const {videos} = props;
   const {videoid = videos[0].id} = useParams()
   const [currentVideo, setCurrentVideo] = useState({});
 useEffect(()=>{
@@ -17,13 +17,15 @@ useEffect(()=>{
       setCurrentVideo(response.data)
   })
 }, [videoid]);
+
+  const {comments} = currentVideo
   return (
     <div>
       <Video {...currentVideo}/>
       <div className="app__body container">
         <div className="app__video">
           <VideoDetails {...currentVideo} />
-          <Comments comments = {comments}/>
+          <Comments comments={comments}/>
         </div>
         <div className="app__aside">
           <NextVideos
