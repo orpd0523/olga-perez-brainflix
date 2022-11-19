@@ -3,12 +3,15 @@ import TextField from "../TextField/TextField";
 import publish from "../../assets/icons/publish.svg";
 import videoPreview from "../../assets/images/Upload-video-preview.jpg";
 import "./UploadForm.scss";
+import axios from "axios";
 
 
 function UploadForm(props) {
-    const handleSubmit = (event)=>{
-        event.preventDefault()
-        window.alert("uploaded")
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+        //axios.post('http://localhost:3001/videos')
+        
+        //window.alert("uploaded")
     }
   return (
     <form onSubmit= {handleSubmit}className="upload-form">
