@@ -8,6 +8,10 @@
   gap: 1rem;
   margin: 0.5rem 0;
 
+  &__link{
+    text-decoration: none;
+  }
+
   &__aside {
     background-color: colors.$mercury;
     height: 3.875rem;
