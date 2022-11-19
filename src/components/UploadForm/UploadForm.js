@@ -4,19 +4,21 @@ import publish from "../../assets/icons/publish.svg";
 import videoPreview from "../../assets/images/Upload-video-preview.jpg";
 import "./UploadForm.scss";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom"
 
 function UploadForm(props) {
+    const navigate = useNavigate()
     const handleSubmit = (e)=>{
         e.preventDefault()
         const object = {
           title: e.target.title.value,
           description: e.target.description.value 
         }
+        e.target.reset()
         axios.post('http://localhost:3001/videos', object)
         .then(res =>{
           window.alert( `Successfully Uploaded ${res.data.title}.`)
-          console.log(res.data)
+          navigate("/")
         })
         .catch(error => {
           window.alert(error)
