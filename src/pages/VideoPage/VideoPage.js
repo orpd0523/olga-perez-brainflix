@@ -1,4 +1,4 @@
-import Video from "../../components/VideoSection/Video";
+import Video from "../../components/Video/Video";
 import VideoDetails from "../../components/VideoDetailsSection/VideoDetails";
 import Comments from "../../components/CommentsSection/Comments";
 import NextVideos from "../../components/NextVideos/NextVideos";

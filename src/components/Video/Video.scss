@@ -1,0 +1,23 @@
+@use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/responsive" as responsive;
+@use "../../styles/partials/typography" as typography;
+
+.video {
+  background-color: colors.$dark-black;
+
+  &__container {
+    max-width: 65rem;
+    margin-inline: auto;
+    position: relative;
+  }
+
+  @include responsive.tablet {
+    padding-inline: 2.25rem;
+  }
+
+  &__screen {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
