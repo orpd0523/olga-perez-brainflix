@@ -12,6 +12,9 @@ import axios from 'axios';
         .then(response =>{
           setVideos(response.data)
       })
+      .catch(error => {
+        window.alert(error)
+      })
     }, [])
   
    const [videos, setVideos] = useState([]); 

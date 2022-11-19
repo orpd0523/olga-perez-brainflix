@@ -16,6 +16,9 @@ useEffect(()=>{
     .then(response =>{
       setCurrentVideo(response.data)
   })
+  .catch(error => {
+    window.alert(error)
+  })
 }, [videoid]);
 
   const {comments} = currentVideo
