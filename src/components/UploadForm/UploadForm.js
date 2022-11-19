@@ -9,8 +9,18 @@ import axios from "axios";
 function UploadForm(props) {
     const handleSubmit = (e)=>{
         e.preventDefault()
-        //axios.post('http://localhost:3001/videos')
-        
+        const object = {
+          title: e.target.title.value,
+          description: e.target.description.value 
+        }
+        axios.post('http://localhost:3001/videos', object)
+        .then(res =>{
+          window.alert( `Successfully Uploaded ${res.data.title}.`)
+          console.log(res.data)
+        })
+        .catch(error => {
+          window.alert(error)
+        })
         //window.alert("uploaded")
     }
   return (
@@ -27,11 +37,11 @@ function UploadForm(props) {
           />
         </span>
         <span className="upload-form__main">
-          <TextField
+          <TextField name="title"
             label="TITLE YOUR VIDEO"
             placeholder="Add a title to your video"
           />
-          <TextField
+          <TextField name="description"
             label="ADD A VIDEO DESCRIPTION"
             placeholder="Add a description to your video"
           />
