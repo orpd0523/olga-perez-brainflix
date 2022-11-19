@@ -6,7 +6,7 @@ function Comments(props) {
   const { comments = [] } = props;
   return (
     <section className="border">
-      <CommentsTitle />
+      <h2 className="typography typography--h2 comments__title">{comments.length || 0} Comments</h2>
       <CommentsForm />
       <ul className="comments">
         {comments.length > 0 &&
@@ -15,12 +15,6 @@ function Comments(props) {
           })}
       </ul>
     </section>
-  );
-}
-
-function CommentsTitle() {
-  return (
-    <h2 className="typography typography--h2 comments__title">3 Comments</h2>
   );
 }
 
