@@ -3,21 +3,24 @@ import Navigation from "./components/NavigationSection/Navigation";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VideoPage from "./components/VideoPage/VideoPage";
-import UploadVideo from "./components/UploadPage/UploadPage";
-import axios from 'axios';
+import UploadVideo from "./pages/UploadPage/UploadPage";
+import axios from "axios";
 
-  function App() {
-    useEffect(() =>{
-      axios.get('http://localhost:3001/videos?api_key=219e369b-90a6-41bf-b7ae-59ad7724b87f')
-        .then(response =>{
-          setVideos(response.data)
+function App() {
+  useEffect(() => {
+    axios
+      .get(
+        "http://localhost:3001/videos?api_key=219e369b-90a6-41bf-b7ae-59ad7724b87f"
+      )
+      .then((response) => {
+        setVideos(response.data);
       })
-      .catch(error => {
-        window.alert(error)
-      })
-    }, [])
-  
-   const [videos, setVideos] = useState([]); 
+      .catch((error) => {
+        window.alert(error);
+      });
+  }, []);
+
+  const [videos, setVideos] = useState([]);
   return (
     <BrowserRouter>
       <div className="app">
@@ -25,18 +28,14 @@ import axios from 'axios';
         <Routes>
           <Route
             path="/"
-            element={
-              <>{videos.length > 0 && <VideoPage videos={videos}/>}</>
-            }
+            element={<>{videos.length > 0 && <VideoPage videos={videos} />}</>}
           ></Route>
           <Route path="upload" element={<UploadVideo />}></Route>
           <Route
             path="videos/:videoid"
-            element={
-              <VideoPage videos={videos}/>
-            }
+            element={<VideoPage videos={videos} />}
           ></Route>
-        </Routes> 
+        </Routes>
       </div>
     </BrowserRouter>
   );
