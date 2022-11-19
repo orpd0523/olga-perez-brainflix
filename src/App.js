@@ -2,7 +2,7 @@ import "./App.scss";
 import Navigation from "./components/NavigationSection/Navigation";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import VideoPage from "./components/VideoPage/VideoPage";
+import VideoPage from "./pages/VideoPage/VideoPage";
 import UploadVideo from "./pages/UploadPage/UploadPage";
 import axios from "axios";
 
