@@ -8,7 +8,7 @@ import axios from 'axios';
 
   function App() {
     useEffect(() =>{
-      axios.get('https://project-2-api.herokuapp.com/videos?api_key=219e369b-90a6-41bf-b7ae-59ad7724b87f')
+      axios.get('http://localhost:3001/videos?api_key=219e369b-90a6-41bf-b7ae-59ad7724b87f')
         .then(response =>{
           setVideos(response.data)
       })

@@ -12,7 +12,7 @@ function VideoPage(props) {
   const [currentVideo, setCurrentVideo] = useState({});
 useEffect(()=>{
   const id = videoid
-  axios.get('https://project-2-api.herokuapp.com/videos/'+ id +'?api_key=219e369b-90a6-41bf-b7ae-59ad7724b87f')
+  axios.get('http://localhost:3001/videos/'+ id +'?api_key=219e369b-90a6-41bf-b7ae-59ad7724b87f')
     .then(response =>{
       setCurrentVideo(response.data)
   })
