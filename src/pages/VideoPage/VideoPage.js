@@ -7,19 +7,34 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function VideoPage(props) {
-  const { videos } = props;
-  const { videoid = videos[0].id } = useParams();
+  const [videos, setVideos] = useState([]);
+  const { videoid } = useParams();
   const [currentVideo, setCurrentVideo] = useState({});
   useEffect(() => {
-    const id = videoid;
     axios
       .get(
-        "http://localhost:3001/videos/" +
-          id +
-          "?api_key=219e369b-90a6-41bf-b7ae-59ad7724b87f"
+        "http://localhost:3001/videos?api_key=219e369b-90a6-41bf-b7ae-59ad7724b87f"
       )
       .then((response) => {
-        setCurrentVideo(response.data);
+        setVideos(response.data);
+        let id = undefined;
+        if (videoid === undefined) {
+          id = response.data[0].id;
+        } else {
+          id = videoid;
+        }
+        axios
+          .get(
+            "http://localhost:3001/videos/" +
+              id +
+              "?api_key=219e369b-90a6-41bf-b7ae-59ad7724b87f"
+          )
+          .then((response) => {
+            setCurrentVideo(response.data);
+          })
+          .catch((error) => {
+            window.alert(error);
+          });
       })
       .catch((error) => {
         window.alert(error);
@@ -29,16 +44,21 @@ function VideoPage(props) {
   const { comments } = currentVideo;
   return (
     <main>
-      <Video {...currentVideo} />
-      <div className="app__body container">
-        <div className="app__video">
-          <VideoDetails {...currentVideo} />
-          <Comments comments={comments} />
-        </div>
-        <section className="app__aside">
-          <NextVideos currentVideoId={currentVideo.id} videos={videos} />
-        </section>
-      </div>
+      {JSON.stringify(currentVideo) !== "{}" && (
+        <>
+          {" "}
+          <Video {...currentVideo} />
+          <div className="app__body container">
+            <div className="app__video">
+              <VideoDetails {...currentVideo} />
+              <Comments comments={comments} />
+            </div>
+            <section className="app__aside">
+              <NextVideos currentVideoId={currentVideo.id} videos={videos} />
+            </section>
+          </div>
+        </>
+      )}
     </main>
   );
 }
