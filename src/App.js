@@ -3,7 +3,7 @@ import Navigation from "./components/NavigationSection/Navigation";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VideoPage from "./components/VideoPage/VideoPage";
-import UploadVideo from "./components/UploadVideo/UploadVideo";
+import UploadVideo from "./components/UploadPage/UploadPage";
 import axios from 'axios';
 
   function App() {
