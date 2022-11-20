@@ -13,6 +13,7 @@ function UploadForm(props) {
     const object = {
       title: e.target.title.value,
       description: e.target.description.value,
+      image: "http://localhost:3001/images/image10.jpg",
     };
     e.target.reset();
     axios
@@ -45,6 +46,8 @@ function UploadForm(props) {
             placeholder="Add a title to your video"
           />
           <TextField
+            multiline
+            full
             name="description"
             label="ADD A VIDEO DESCRIPTION"
             placeholder="Add a description to your video"
