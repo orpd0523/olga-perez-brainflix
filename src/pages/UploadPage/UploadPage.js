@@ -1,5 +1,5 @@
-import "./UploadVideo.scss";
-import UploadForm from "../UploadForm/UploadForm";
+import "./UploadPage.scss";
+import UploadForm from "../../components/UploadForm/UploadForm";
 
 function UploadVideo() {
   return (

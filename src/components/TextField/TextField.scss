@@ -34,6 +34,9 @@
       height: 2.5rem;
       &--multiline {
         height: 2.25rem;
+        &--full{
+        height: calc(3 * 2.25rem);
+        }
       }
     }
   }

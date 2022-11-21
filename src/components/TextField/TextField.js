@@ -1,9 +1,23 @@
 import "./TextField.scss";
 
 function TextField(props) {
-  const { alt, src, type = "text", multiline, placeholder, label, id } = props;
+  const {
+    alt,
+    src,
+    type = "text",
+    multiline,
+    placeholder,
+    label,
+    id,
+    name,
+    full,
+  } = props;
   const wrapper = "text-field__wrapper";
-  const wrapperClass = multiline ? `${wrapper} ${wrapper}--multiline` : wrapper;
+  const wrapperClass = multiline
+    ? `${wrapper} ${wrapper}--multiline ${
+        full ? `${wrapper}--multiline--full` : ""
+      }`
+    : wrapper;
   const Node = multiline ? "textarea" : "input";
   return (
     <div className="text-field">
@@ -18,6 +32,7 @@ function TextField(props) {
         )}
         <span className="text-field__body">
           <Node
+            name={name}
             id={id}
             type={type}
             placeholder={placeholder}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function NextVideo(props) {
   const { image, title, channel, id } = props;
   return (
-    <Link to={`/videos/${id}`} >
+    <Link className="next-video__link" to={`/videos/${id}`} >
       <li className="next-video">
         <span className="next-video__aside">
           <img className="next-video__image" alt={title} src={image} />
